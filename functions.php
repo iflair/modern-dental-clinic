@@ -25,24 +25,24 @@ function mlt_setup() {
 
     // Navigation menus
     register_nav_menus( array(
-        'primary' => __( 'Primary Menu','dental-care' )
+        'primary' => __( 'Primary Menu','modern-dental-clinic' )
     ) );
 
     // Block pattern category
     register_block_pattern_category(
-        'dental-care-patterns',
-        array( 'label' => __( 'Dental Care Patterns', 'dental-care' ) )
+        'modern-dental-clinic-patterns',
+        array( 'label' => __( 'Dental Care Patterns', 'modern-dental-clinic' ) )
     );
 
     // Example block pattern
     if ( function_exists( 'register_block_pattern' ) ) {
         register_block_pattern(
-            'dental-care/hero-section',
+            'modern-dental-clinic/hero-section',
             array(
-                'title'       => __( 'Hero Section', 'dental-care' ),
-                'description' => __( 'A simple hero section layout.', 'dental-care' ),
+                'title'       => __( 'Hero Section', 'modern-dental-clinic' ),
+                'description' => __( 'A simple hero section layout.', 'modern-dental-clinic' ),
                 'content'     => '<!-- wp:cover {"overlayColor":"black","minHeight":300} -->
-<div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center"} --><h2 class="has-text-align-center">Welcome to Dental Care</h2><!-- /wp:heading --></div></div>
+<div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center"} --><h2 class="has-text-align-center">Welcome to Modern Dental Clinic</h2><!-- /wp:heading --></div></div>
 <!-- /wp:cover -->',
             )
         );
@@ -56,8 +56,8 @@ function mlt_setup() {
         register_block_style(
             'core/button',
             array(
-                'name'  => 'dental-care-rounded',
-                'label' => __( 'Rounded Button', 'dental-care' ),
+                'name'  => 'modern-dental-clinic-rounded',
+                'label' => __( 'Rounded Button', 'modern-dental-clinic' ),
             )
         );
     }
@@ -111,9 +111,9 @@ add_action( 'wp_enqueue_scripts', 'mlt_assets' );
 function mlt_register_sidebars() {
     register_sidebar(
         array(
-            'name'          => __( 'Primary Sidebar', 'dental-care' ),
+            'name'          => __( 'Primary Sidebar', 'modern-dental-clinic' ),
             'id'            => 'sidebar-1',
-            'description'   => __( 'Main sidebar that appears on posts and pages.', 'dental-care' ),
+            'description'   => __( 'Main sidebar that appears on posts and pages.', 'modern-dental-clinic' ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -127,13 +127,13 @@ add_action( 'widgets_init', 'mlt_register_sidebars' );
 function mlt_customize_register($wp_customize) {
     // Panel for Dental Theme Options
     $wp_customize->add_panel('mlt_dental_panel', array(
-        'title' => __('Dental Theme Settings', 'dental-care'),
+        'title' => __('Dental Theme Settings', 'modern-dental-clinic'),
         'priority' => 10,
     ));
 
     // ===== CLINIC INFO SECTION =====
     $wp_customize->add_section('mlt_clinic_info', array(
-        'title' => __('Clinic Information', 'dental-care'),
+        'title' => __('Clinic Information', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 10,
     ));
@@ -144,7 +144,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_clinic_name', array(
-        'label' => __('Clinic Name', 'dental-care'),
+        'label' => __('Clinic Name', 'modern-dental-clinic'),
         'section' => 'mlt_clinic_info',
         'type' => 'text',
     ));
@@ -155,7 +155,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_clinic_phone', array(
-        'label' => __('Clinic Phone Number', 'dental-care'),
+        'label' => __('Clinic Phone Number', 'modern-dental-clinic'),
         'section' => 'mlt_clinic_info',
         'type' => 'tel',
     ));
@@ -166,7 +166,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_clinic_email', array(
-        'label' => __('Clinic Email', 'dental-care'),
+        'label' => __('Clinic Email', 'modern-dental-clinic'),
         'section' => 'mlt_clinic_info',
         'type' => 'email',
     ));
@@ -177,7 +177,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_clinic_address', array(
-        'label' => __('Clinic Address', 'dental-care'),
+        'label' => __('Clinic Address', 'modern-dental-clinic'),
         'section' => 'mlt_clinic_info',
         'type' => 'textarea',
     ));
@@ -188,14 +188,14 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_clinic_description', array(
-        'label' => __('Clinic Description', 'dental-care'),
+        'label' => __('Clinic Description', 'modern-dental-clinic'),
         'section' => 'mlt_clinic_info',
         'type' => 'textarea',
     ));
 
     // ===== COLORS SECTION =====
     $wp_customize->add_section('mlt_colors', array(
-        'title' => __('Colors & Branding', 'dental-care'),
+        'title' => __('Colors & Branding', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 20,
     ));
@@ -206,7 +206,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'mlt_accent_color', array(
-        'label' => __('Primary Accent Color', 'dental-care'),
+        'label' => __('Primary Accent Color', 'modern-dental-clinic'),
         'section' => 'mlt_colors',
     )));
 
@@ -216,7 +216,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'mlt_secondary_color', array(
-        'label' => __('Secondary Color', 'dental-care'),
+        'label' => __('Secondary Color', 'modern-dental-clinic'),
         'section' => 'mlt_colors',
     )));
 
@@ -226,7 +226,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'mlt_text_color', array(
-        'label' => __('Text Color', 'dental-care'),
+        'label' => __('Text Color', 'modern-dental-clinic'),
         'section' => 'mlt_colors',
     )));
 
@@ -236,13 +236,13 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'mlt_background_color', array(
-        'label' => __('Background Color', 'dental-care'),
+        'label' => __('Background Color', 'modern-dental-clinic'),
         'section' => 'mlt_colors',
     )));
 
     // ===== CONTACT FORM SECTION =====
     $wp_customize->add_section('mlt_contact_form', array(
-        'title' => __('Contact Form Settings', 'dental-care'),
+        'title' => __('Contact Form Settings', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 30,
     ));
@@ -253,7 +253,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_contact_email', array(
-        'label' => __('Send Contact Form To', 'dental-care'),
+        'label' => __('Send Contact Form To', 'modern-dental-clinic'),
         'section' => 'mlt_contact_form',
         'type' => 'email',
     ));
@@ -264,7 +264,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_success_message', array(
-        'label' => __('Success Message', 'dental-care'),
+        'label' => __('Success Message', 'modern-dental-clinic'),
         'section' => 'mlt_contact_form',
         'type' => 'textarea',
     ));
@@ -275,14 +275,14 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_error_message', array(
-        'label' => __('Error Message', 'dental-care'),
+        'label' => __('Error Message', 'modern-dental-clinic'),
         'section' => 'mlt_contact_form',
         'type' => 'textarea',
     ));
 
     // ===== SOCIAL MEDIA SECTION =====
     $wp_customize->add_section('mlt_social_media', array(
-        'title' => __('Social Media Links', 'dental-care'),
+        'title' => __('Social Media Links', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 40,
     ));
@@ -303,21 +303,21 @@ function mlt_customize_register($wp_customize) {
 
     // ===== HOMEPAGE SETTINGS SECTION =====
     $wp_customize->add_section('mlt_homepage', array(
-        'title' => __('Homepage Settings', 'dental-care'),
+        'title' => __('Homepage Settings', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 50,
     ));
 
     // ===== FEATURES SECTION (Customizer-managed list) =====
     $wp_customize->add_section('mlt_features', array(
-        'title' => __('Features Section', 'dental-care'),
+        'title' => __('Features Section', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 52,
     ));
 
     // ===== HERO SECTION (Slider-managed list) =====
     $wp_customize->add_section('mlt_hero', array(
-        'title' => __('Hero Section (Slider)', 'dental-care'),
+        'title' => __('Hero Section (Slider)', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 51,
     ));
@@ -349,8 +349,8 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_hero_slides', array(
-        'label' => __('Hero Slides (JSON array)', 'dental-care'),
-        'description' => __('Provide a JSON array of hero slides. Keys: "title", "subtitle", "image" (background image URL), "cta_text". Example: [{"title":"...","subtitle":"...","image":"...","cta_text":"..."}]', 'dental-care'),
+        'label' => __('Hero Slides (JSON array)', 'modern-dental-clinic'),
+        'description' => __('Provide a JSON array of hero slides. Keys: "title", "subtitle", "image" (background image URL), "cta_text". Example: [{"title":"...","subtitle":"...","image":"...","cta_text":"..."}]', 'modern-dental-clinic'),
         'section' => 'mlt_hero',
         'type' => 'textarea',
     ));
@@ -361,7 +361,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_hero_autoplay', array(
-        'label' => __('Autoplay Slides', 'dental-care'),
+        'label' => __('Autoplay Slides', 'modern-dental-clinic'),
         'section' => 'mlt_hero',
         'type' => 'checkbox',
     ));
@@ -372,7 +372,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_features_section_title', array(
-        'label' => __('Section Title', 'dental-care'),
+        'label' => __('Section Title', 'modern-dental-clinic'),
         'section' => 'mlt_features',
         'type' => 'text',
     ));
@@ -387,15 +387,15 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_features_items', array(
-        'label' => __('Features Items (JSON array)', 'dental-care'),
-        'description' => __('Provide a JSON array of items. Each item should have "title" and "content" keys. Example: [{"title":"X","content":"Y"}]', 'dental-care'),
+        'label' => __('Features Items (JSON array)', 'modern-dental-clinic'),
+        'description' => __('Provide a JSON array of items. Each item should have "title" and "content" keys. Example: [{"title":"X","content":"Y"}]', 'modern-dental-clinic'),
         'section' => 'mlt_features',
         'type' => 'textarea',
     ));
 
     // ===== SERVICES SECTION (Customizer-managed list) =====
     $wp_customize->add_section('mlt_services', array(
-        'title' => __('Services Section', 'dental-care'),
+        'title' => __('Services Section', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 53,
     ));
@@ -406,7 +406,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_services_section_title', array(
-        'label' => __('Section Title', 'dental-care'),
+        'label' => __('Section Title', 'modern-dental-clinic'),
         'section' => 'mlt_services',
         'type' => 'text',
     ));
@@ -421,15 +421,15 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_services_items', array(
-        'label' => __('Services Items (JSON array)', 'dental-care'),
-        'description' => __('Provide a JSON array of items. Each item should have "title" and "content" keys. Example: [{"title":"X","content":"Y"}]', 'dental-care'),
+        'label' => __('Services Items (JSON array)', 'modern-dental-clinic'),
+        'description' => __('Provide a JSON array of items. Each item should have "title" and "content" keys. Example: [{"title":"X","content":"Y"}]', 'modern-dental-clinic'),
         'section' => 'mlt_services',
         'type' => 'textarea',
     ));
 
     // ===== TEAM SECTION (Customizer-managed list) =====
     $wp_customize->add_section('mlt_team', array(
-        'title' => __('Team Section', 'dental-care'),
+        'title' => __('Team Section', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 54,
     ));
@@ -440,7 +440,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_team_section_title', array(
-        'label' => __('Section Title', 'dental-care'),
+        'label' => __('Section Title', 'modern-dental-clinic'),
         'section' => 'mlt_team',
         'type' => 'text',
     ));
@@ -488,15 +488,15 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_team_items', array(
-        'label' => __('Team Items (JSON array)', 'dental-care'),
-        'description' => __('Provide a JSON array of team members. Keys: "name", "role", "bio", "image" (URL), "socials" (object with facebook, twitter, instagram, linkedin, youtube keys). Example: [{"name":"Dr X","role":"...","bio":"...","image":"...","socials":{"facebook":"..."}}]', 'dental-care'),
+        'label' => __('Team Items (JSON array)', 'modern-dental-clinic'),
+        'description' => __('Provide a JSON array of team members. Keys: "name", "role", "bio", "image" (URL), "socials" (object with facebook, twitter, instagram, linkedin, youtube keys). Example: [{"name":"Dr X","role":"...","bio":"...","image":"...","socials":{"facebook":"..."}}]', 'modern-dental-clinic'),
         'section' => 'mlt_team',
         'type' => 'textarea',
     ));
 
     // ===== TESTIMONIALS SECTION (Customizer-managed list) =====
     $wp_customize->add_section('mlt_testimonials', array(
-        'title' => __('Testimonials Section', 'dental-care'),
+        'title' => __('Testimonials Section', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 55,
     ));
@@ -507,7 +507,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_testimonials_section_title', array(
-        'label' => __('Section Title', 'dental-care'),
+        'label' => __('Section Title', 'modern-dental-clinic'),
         'section' => 'mlt_testimonials',
         'type' => 'text',
     ));
@@ -522,15 +522,15 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_testimonials_items', array(
-        'label' => __('Testimonials Items (JSON array)', 'dental-care'),
-        'description' => __('Provide a JSON array of testimonials. Each item should have "content" and "author" keys. Example: [{"content":"X","author":"Y"}]', 'dental-care'),
+        'label' => __('Testimonials Items (JSON array)', 'modern-dental-clinic'),
+        'description' => __('Provide a JSON array of testimonials. Each item should have "content" and "author" keys. Example: [{"content":"X","author":"Y"}]', 'modern-dental-clinic'),
         'section' => 'mlt_testimonials',
         'type' => 'textarea',
     ));
 
     // ===== PRICING SECTION (Customizer-managed packages) =====
     $wp_customize->add_section('mlt_pricing', array(
-        'title' => __('Pricing Section', 'dental-care'),
+        'title' => __('Pricing Section', 'modern-dental-clinic'),
         'panel' => 'mlt_dental_panel',
         'priority' => 56,
     ));
@@ -541,7 +541,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_pricing_section_title', array(
-        'label' => __('Section Title', 'dental-care'),
+        'label' => __('Section Title', 'modern-dental-clinic'),
         'section' => 'mlt_pricing',
         'type' => 'text',
     ));
@@ -552,7 +552,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_pricing_section_subtitle', array(
-        'label' => __('Section Subtitle', 'dental-care'),
+        'label' => __('Section Subtitle', 'modern-dental-clinic'),
         'section' => 'mlt_pricing',
         'type' => 'textarea',
     ));
@@ -567,8 +567,8 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_pricing_items', array(
-        'label' => __('Pricing Packages (JSON array)', 'dental-care'),
-        'description' => __('Each item: {"name","price","period","description","features"(comma-separated),"cta_text","popular"(true/false)}', 'dental-care'),
+        'label' => __('Pricing Packages (JSON array)', 'modern-dental-clinic'),
+        'description' => __('Each item: {"name","price","period","description","features"(comma-separated),"cta_text","popular"(true/false)}', 'modern-dental-clinic'),
         'section' => 'mlt_pricing',
         'type' => 'textarea',
     ));
@@ -579,7 +579,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_show_services', array(
-        'label' => __('Show Services Section', 'dental-care'),
+        'label' => __('Show Services Section', 'modern-dental-clinic'),
         'section' => 'mlt_homepage',
         'type' => 'checkbox',
     ));
@@ -590,7 +590,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_show_team', array(
-        'label' => __('Show Team Section', 'dental-care'),
+        'label' => __('Show Team Section', 'modern-dental-clinic'),
         'section' => 'mlt_homepage',
         'type' => 'checkbox',
     ));
@@ -601,7 +601,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_show_testimonials', array(
-        'label' => __('Show Testimonials Section', 'dental-care'),
+        'label' => __('Show Testimonials Section', 'modern-dental-clinic'),
         'section' => 'mlt_homepage',
         'type' => 'checkbox',
     ));
@@ -612,7 +612,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_show_hours', array(
-        'label' => __('Show Hours Section', 'dental-care'),
+        'label' => __('Show Hours Section', 'modern-dental-clinic'),
         'section' => 'mlt_homepage',
         'type' => 'checkbox',
     ));
@@ -623,7 +623,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_show_pricing', array(
-        'label' => __('Show Pricing Section', 'dental-care'),
+        'label' => __('Show Pricing Section', 'modern-dental-clinic'),
         'section' => 'mlt_homepage',
         'type' => 'checkbox',
     ));
@@ -635,7 +635,7 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('mlt_hours_section_title', array(
-        'label' => __('Hours Section Title', 'dental-care'),
+        'label' => __('Hours Section Title', 'modern-dental-clinic'),
         'section' => 'mlt_homepage',
         'type' => 'text',
     ));
@@ -652,8 +652,8 @@ function mlt_customize_register($wp_customize) {
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('mlt_office_hours', array(
-        'label' => __('Office Hours (JSON array)', 'dental-care'),
-        'description' => __('Provide a JSON array of office hours. Keys: "day", "hours". Example: [{"day":"Monday - Friday","hours":"9:00 AM - 6:00 PM"},{"day":"Saturday","hours":"10:00 AM - 4:00 PM"}]', 'dental-care'),
+        'label' => __('Office Hours (JSON array)', 'modern-dental-clinic'),
+        'description' => __('Provide a JSON array of office hours. Keys: "day", "hours". Example: [{"day":"Monday - Friday","hours":"9:00 AM - 6:00 PM"},{"day":"Saturday","hours":"10:00 AM - 4:00 PM"}]', 'modern-dental-clinic'),
         'section' => 'mlt_homepage',
         'type' => 'textarea',
     ));
@@ -666,8 +666,8 @@ function mlt_register_block_styles() {
     register_block_style(
         'core/paragraph',
         array(
-            'name'  => 'dental-care-highlight',
-            'label' => __( 'Highlight Text', 'dental-care' ),
+            'name'  => 'modern-dental-clinic-highlight',
+            'label' => __( 'Highlight Text', 'modern-dental-clinic' ),
         )
     );
 
@@ -678,16 +678,16 @@ function mlt_register_block_patterns() {
 
     // Register a pattern category
     register_block_pattern_category(
-        'dental-care',
-        array( 'label' => __( 'Dental Care', 'dental-care' ) )
+        'modern-dental-clinic',
+        array( 'label' => __( 'Modern Dental Clinic', 'modern-dental-clinic' ) )
     );
 
     // Register a simple block pattern
     register_block_pattern(
-        'dental-care/simple-cta',
+        'modern-dental-clinic/simple-cta',
         array(
-            'title'       => __( 'Simple CTA Box', 'dental-care' ),
-            'description' => __( 'A simple call-to-action block pattern.', 'dental-care' ),
+            'title'       => __( 'Simple CTA Box', 'modern-dental-clinic' ),
+            'description' => __( 'A simple call-to-action block pattern.', 'modern-dental-clinic' ),
             'content'     =>
                 '<div class="wp-block-group" style="padding:20px; background:#f2f8ff; text-align:center;">
                     <h2>Need Dental Help?</h2>
@@ -714,7 +714,7 @@ if (!function_exists('mlt_set_theme_defaults')) {
         // Build all defaults matching Customizer register function
         $defaults = array(
             // Clinic Information (do not prefill clinic name on activation)
-            'mlt_clinic_name' => 'Dental Care',
+            'mlt_clinic_name' => 'Modern Dental Clinic',
             'mlt_clinic_phone' => '555-123-4567',
             'mlt_clinic_email' => $admin_email,
             'mlt_clinic_address' => '123 Main Street, Your City, State 12345',
@@ -1453,8 +1453,8 @@ function mlt_add_admin_menu() {
     mlt_create_submissions_table();
     
     add_menu_page(
-        __('Appointments', 'dental-care'),
-        __('Appointments', 'dental-care'),
+        __('Appointments', 'modern-dental-clinic'),
+        __('Appointments', 'modern-dental-clinic'),
         'manage_options',
         'mlt-appointments',
         'mlt_admin_appointments_page',
@@ -1464,8 +1464,8 @@ function mlt_add_admin_menu() {
     
     add_submenu_page(
         'mlt-appointments',
-        __('All Appointments', 'dental-care'),
-        __('All Appointments', 'dental-care'),
+        __('All Appointments', 'modern-dental-clinic'),
+        __('All Appointments', 'modern-dental-clinic'),
         'manage_options',
         'mlt-appointments',
         'mlt_admin_appointments_page'
@@ -1473,8 +1473,8 @@ function mlt_add_admin_menu() {
     
     add_submenu_page(
         'mlt-appointments',
-        __('Theme Settings', 'dental-care'),
-        __('Settings', 'dental-care'),
+        __('Theme Settings', 'modern-dental-clinic'),
+        __('Settings', 'modern-dental-clinic'),
         'manage_options',
         'mlt-theme-settings',
         'mlt_theme_settings_page'
@@ -1485,7 +1485,7 @@ add_action('admin_menu', 'mlt_add_admin_menu');
 // ========== APPOINTMENTS ADMIN PAGE ==========
 function mlt_admin_appointments_page() {
     if (!current_user_can('manage_options')) {
-        wp_die(__('Insufficient permissions', 'dental-care'));
+        wp_die(__('Insufficient permissions', 'modern-dental-clinic'));
     }
     
     global $wpdb;
@@ -1531,29 +1531,29 @@ function mlt_admin_appointments_page() {
     
     ?>
     <div class="wrap">
-        <h1><?php _e('Appointment Submissions', 'dental-care'); ?></h1>
+        <h1><?php _e('Appointment Submissions', 'modern-dental-clinic'); ?></h1>
         
         <?php if (count($submissions) > 0) : ?>
-            <div class="notice notice-info"><p><?php printf(__('Total Appointments: %d', 'dental-care'), count($submissions)); ?></p></div>
+            <div class="notice notice-info"><p><?php printf(__('Total Appointments: %d', 'modern-dental-clinic'), count($submissions)); ?></p></div>
         <?php endif; ?>
         
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>
-                    <th><?php _e('Name', 'dental-care'); ?></th>
-                    <th><?php _e('Email', 'dental-care'); ?></th>
-                    <th><?php _e('Phone', 'dental-care'); ?></th>
-                    <th><?php _e('Service', 'dental-care'); ?></th>
-                    <th><?php _e('Preferred Date', 'dental-care'); ?></th>
-                    <th><?php _e('Time Slot', 'dental-care'); ?></th>
-                    <th><?php _e('Status', 'dental-care'); ?></th>
-                    <th><?php _e('Submitted', 'dental-care'); ?></th>
-                    <th><?php _e('Actions', 'dental-care'); ?></th>
+                    <th><?php _e('Name', 'modern-dental-clinic'); ?></th>
+                    <th><?php _e('Email', 'modern-dental-clinic'); ?></th>
+                    <th><?php _e('Phone', 'modern-dental-clinic'); ?></th>
+                    <th><?php _e('Service', 'modern-dental-clinic'); ?></th>
+                    <th><?php _e('Preferred Date', 'modern-dental-clinic'); ?></th>
+                    <th><?php _e('Time Slot', 'modern-dental-clinic'); ?></th>
+                    <th><?php _e('Status', 'modern-dental-clinic'); ?></th>
+                    <th><?php _e('Submitted', 'modern-dental-clinic'); ?></th>
+                    <th><?php _e('Actions', 'modern-dental-clinic'); ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php if (empty($submissions)) : ?>
-                    <tr><td colspan="9"><?php _e('No appointments yet.', 'dental-care'); ?></td></tr>
+                    <tr><td colspan="9"><?php _e('No appointments yet.', 'modern-dental-clinic'); ?></td></tr>
                 <?php else : ?>
                     <?php foreach ($submissions as $submission) : ?>
                         <tr>
@@ -1573,8 +1573,8 @@ function mlt_admin_appointments_page() {
                                     $confirm_url = wp_nonce_url(add_query_arg(array('action' => 'status', 'id' => $submission->id, 'new_status' => 'confirmed')), 'mlt_status_nonce');
                                     $cancel_url = wp_nonce_url(add_query_arg(array('action' => 'status', 'id' => $submission->id, 'new_status' => 'cancelled')), 'mlt_status_nonce');
                                 ?>
-                                | <a href="<?php echo esc_url($confirm_url); ?>"><?php _e('Confirm', 'dental-care'); ?></a>
-                                | <a href="<?php echo esc_url($cancel_url); ?>"><?php _e('Cancel', 'dental-care'); ?></a>
+                                | <a href="<?php echo esc_url($confirm_url); ?>"><?php _e('Confirm', 'modern-dental-clinic'); ?></a>
+                                | <a href="<?php echo esc_url($cancel_url); ?>"><?php _e('Cancel', 'modern-dental-clinic'); ?></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -1594,101 +1594,101 @@ function mlt_admin_appointments_page() {
 // ========== THEME SETTINGS ADMIN PAGE ==========
 function mlt_theme_settings_page() {
     if (!current_user_can('manage_options')) {
-        wp_die(__('Insufficient permissions', 'dental-care'));
+        wp_die(__('Insufficient permissions', 'modern-dental-clinic'));
     }
     
     ?>
     <div class="wrap">
-        <h1><?php _e('Dental Theme Settings', 'dental-care'); ?></h1>
+        <h1><?php _e('Dental Theme Settings', 'modern-dental-clinic'); ?></h1>
         
         <div style="background: #e7f3ff; border-left: 4px solid #0b76d1; padding: 12px; margin: 20px 0;">
-            <p><?php _e('To manage all theme settings including colors, clinic information, and social media links, please go to:', 'dental-care'); ?></p>
-            <p><strong><a href="<?php echo admin_url('customize.php'); ?>"><?php _e('Appearance → Customize', 'dental-care'); ?></a></strong></p>
+            <p><?php _e('To manage all theme settings including colors, clinic information, and social media links, please go to:', 'modern-dental-clinic'); ?></p>
+            <p><strong><a href="<?php echo admin_url('customize.php'); ?>"><?php _e('Appearance → Customize', 'modern-dental-clinic'); ?></a></strong></p>
         </div>
         
-        <h2><?php _e('Quick Links', 'dental-care'); ?></h2>
+        <h2><?php _e('Quick Links', 'modern-dental-clinic'); ?></h2>
         
         <ul style="list-style: none; padding: 0;">
             <li style="margin: 10px 0;">
                 <strong>→</strong> 
                 <a href="<?php echo admin_url('customize.php?autofocus[panel]=mlt_dental_panel'); ?>">
-                    <?php _e('Dental Theme Settings', 'dental-care'); ?>
+                    <?php _e('Dental Theme Settings', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong> 
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_clinic_info'); ?>">
-                    <?php _e('Clinic Information', 'dental-care'); ?>
+                    <?php _e('Clinic Information', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong> 
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_colors'); ?>">
-                    <?php _e('Colors & Branding', 'dental-care'); ?>
+                    <?php _e('Colors & Branding', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong> 
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_contact_form'); ?>">
-                    <?php _e('Contact Form Settings', 'dental-care'); ?>
+                    <?php _e('Contact Form Settings', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong>
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_features'); ?>">
-                    <?php _e('Features Section', 'dental-care'); ?>
+                    <?php _e('Features Section', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong>
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_services'); ?>">
-                    <?php _e('Services Section', 'dental-care'); ?>
+                    <?php _e('Services Section', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong>
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_team'); ?>">
-                    <?php _e('Team Section', 'dental-care'); ?>
+                    <?php _e('Team Section', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong>
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_testimonials'); ?>">
-                    <?php _e('Testimonials Section', 'dental-care'); ?>
+                    <?php _e('Testimonials Section', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong>
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_pricing'); ?>">
-                    <?php _e('Pricing Section', 'dental-care'); ?>
+                    <?php _e('Pricing Section', 'modern-dental-clinic'); ?>
                 </a>
             </li>
             <li style="margin: 10px 0;">
                 <strong>→</strong> 
                 <a href="<?php echo admin_url('customize.php?autofocus[section]=mlt_social_media'); ?>">
-                    <?php _e('Social Media Links', 'dental-care'); ?>
+                    <?php _e('Social Media Links', 'modern-dental-clinic'); ?>
                 </a>
             </li>
         </ul>
         
-        <h2><?php _e('Current Settings Preview', 'dental-care'); ?></h2>
+        <h2><?php _e('Current Settings Preview', 'modern-dental-clinic'); ?></h2>
         
         <table class="wp-list-table widefat">
             <tbody>
                 <tr>
-                    <td><strong><?php _e('Clinic Name:', 'dental-care'); ?></strong></td>
+                    <td><strong><?php _e('Clinic Name:', 'modern-dental-clinic'); ?></strong></td>
                     <td><?php echo esc_html(mlt_get_option('mlt_clinic_name', get_bloginfo('name'))); ?></td>
                 </tr>
                 <tr>
-                    <td><strong><?php _e('Phone:', 'dental-care'); ?></strong></td>
+                    <td><strong><?php _e('Phone:', 'modern-dental-clinic'); ?></strong></td>
                     <td><?php echo esc_html(mlt_get_option('mlt_clinic_phone', 'Not set')); ?></td>
                 </tr>
                 <tr>
-                    <td><strong><?php _e('Email:', 'dental-care'); ?></strong></td>
+                    <td><strong><?php _e('Email:', 'modern-dental-clinic'); ?></strong></td>
                     <td><?php echo esc_html(mlt_get_option('mlt_clinic_email', get_option('admin_email'))); ?></td>
                 </tr>
                 <tr>
-                    <td><strong><?php _e('Primary Color:', 'dental-care'); ?></strong></td>
+                    <td><strong><?php _e('Primary Color:', 'modern-dental-clinic'); ?></strong></td>
                     <td><span style="background: <?php echo esc_attr(mlt_get_option('mlt_accent_color', '#0b76d1')); ?>; width: 30px; height: 30px; display: inline-block; border-radius: 4px; border: 1px solid #ccc;"></span> <?php echo esc_html(mlt_get_option('mlt_accent_color', '#0b76d1')); ?></td>
                 </tr>
             </tbody>

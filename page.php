@@ -28,7 +28,7 @@ if (have_posts()) {
 						
 						// Page pagination
 						wp_link_pages(array(
-							'before'      => '<div class="page-links">' . esc_html__('Pages:', 'dental-care'),
+							'before'      => '<div class="page-links">' . esc_html__('Pages:', 'modern-dental-clinic'),
 							'after'       => '</div>',
 							'link_before' => '<span>',
 							'link_after'  => '</span>',
@@ -52,8 +52,8 @@ if (have_posts()) {
 	<main id="primary" class="mlt-main">
 		<div class="mlt-container">
 			<article class="no-posts">
-				<h1><?php esc_html_e('Page Not Found', 'dental-care'); ?></h1>
-				<p><?php esc_html_e('Sorry, we couldn\'t find the page you were looking for.', 'dental-care'); ?></p>
+				<h1><?php esc_html_e('Page Not Found', 'modern-dental-clinic'); ?></h1>
+				<p><?php esc_html_e('Sorry, we couldn\'t find the page you were looking for.', 'modern-dental-clinic'); ?></p>
 			</article>
 		</div>
 	</main>

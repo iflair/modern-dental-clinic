@@ -12,10 +12,10 @@ if (have_comments()) {
 			<?php
 			$comment_count = get_comments_number();
 			if (1 === $comment_count) {
-				esc_html_e('One Comment', 'dental-care');
+				esc_html_e('One Comment', 'modern-dental-clinic');
 			} else {
 				printf(
-					esc_html(_n('%s Comment', '%s Comments', $comment_count, 'dental-care')),
+					esc_html(_n('%s Comment', '%s Comments', $comment_count, 'modern-dental-clinic')),
 					$comment_count
 				);
 			}
@@ -39,7 +39,7 @@ if (have_comments()) {
 								echo get_avatar($comment, $args['avatar_size'], '', '', array('class' => 'avatar'));
 								?>
 								<b class="fn"><?php comment_author_link($comment); ?></b>
-								<span class="says"><?php esc_html_e('says:', 'dental-care'); ?></span>
+								<span class="says"><?php esc_html_e('says:', 'modern-dental-clinic'); ?></span>
 							</div>
 							<div class="comment-metadata">
 								<a href="<?php echo esc_url(get_comment_link($comment, array('type' => 'all'))); ?>">
@@ -48,7 +48,7 @@ if (have_comments()) {
 									</time>
 								</a>
 								<?php
-								edit_comment_link(__('Edit', 'dental-care'), '<span class="edit-link">', '</span>');
+								edit_comment_link(__('Edit', 'modern-dental-clinic'), '<span class="edit-link">', '</span>');
 								?>
 							</div>
 						</footer>
@@ -76,9 +76,9 @@ if (have_comments()) {
 		if (get_comment_pages_count() > 1 && get_option('page_comments')) {
 			?>
 			<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-				<h1 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'dental-care'); ?></h1>
-				<div class="nav-previous"><?php previous_comments_link(__('← Older Comments', 'dental-care')); ?></div>
-				<div class="nav-next"><?php next_comments_link(__('Newer Comments →', 'dental-care')); ?></div>
+				<h1 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'modern-dental-clinic'); ?></h1>
+				<div class="nav-previous"><?php previous_comments_link(__('← Older Comments', 'modern-dental-clinic')); ?></div>
+				<div class="nav-next"><?php next_comments_link(__('Newer Comments →', 'modern-dental-clinic')); ?></div>
 			</nav>
 			<?php
 		}
@@ -90,21 +90,21 @@ if (have_comments()) {
 // Comment form
 if (comments_open()) {
 	comment_form(array(
-		'title_reply'         => __('Leave a Comment', 'dental-care'),
+		'title_reply'         => __('Leave a Comment', 'modern-dental-clinic'),
 		'title_reply_before'  => '<h2 id="reply-title" class="comment-reply-title">',
 		'title_reply_after'   => '</h2>',
-		'comment_field'       => '<p class="comment-form-comment"><label for="comment">' . esc_html__('Comment', 'dental-care') . '</label><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>',
+		'comment_field'       => '<p class="comment-form-comment"><label for="comment">' . esc_html__('Comment', 'modern-dental-clinic') . '</label><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>',
 		'fields'              => array(
-			'author' => '<p class="comment-form-author"><label for="author">' . esc_html__('Name', 'dental-care') . ' <span class="required">*</span></label><input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author'] ?? '') . '" size="30" maxlength="245" ' . ($req ? 'required' : '') . ' /></p>',
-			'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__('Email', 'dental-care') . ' <span class="required">*</span></label><input id="email" name="email" type="email" value="' . esc_attr($commenter['comment_author_email'] ?? '') . '" size="30" maxlength="100" aria-describedby="email-notes" ' . ($req ? 'required' : '') . ' /></p>',
-			'url'    => '<p class="comment-form-url"><label for="url">' . esc_html__('Website', 'dental-care') . '</label><input id="url" name="url" type="url" value="' . esc_attr($commenter['comment_author_url'] ?? '') . '" size="30" maxlength="200" /></p>',
+			'author' => '<p class="comment-form-author"><label for="author">' . esc_html__('Name', 'modern-dental-clinic') . ' <span class="required">*</span></label><input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author'] ?? '') . '" size="30" maxlength="245" ' . ($req ? 'required' : '') . ' /></p>',
+			'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__('Email', 'modern-dental-clinic') . ' <span class="required">*</span></label><input id="email" name="email" type="email" value="' . esc_attr($commenter['comment_author_email'] ?? '') . '" size="30" maxlength="100" aria-describedby="email-notes" ' . ($req ? 'required' : '') . ' /></p>',
+			'url'    => '<p class="comment-form-url"><label for="url">' . esc_html__('Website', 'modern-dental-clinic') . '</label><input id="url" name="url" type="url" value="' . esc_attr($commenter['comment_author_url'] ?? '') . '" size="30" maxlength="200" /></p>',
 		),
 		'class_submit' => 'submit',
 		'submit_button' => '<button name="%1$s" type="submit" id="%2$s" class="%3$s wp-element-button">%4$s</button>',
 	));
 } else {
 	?>
-	<p class="no-comments-allowed"><?php esc_html_e('Comments are closed.', 'dental-care'); ?></p>
+	<p class="no-comments-allowed"><?php esc_html_e('Comments are closed.', 'modern-dental-clinic'); ?></p>
 	<?php
 }
 ?>

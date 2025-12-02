@@ -13,7 +13,7 @@ if (have_posts()) {
 						<div class="entry-meta">
 							<?php
 							printf(
-								esc_html__('By %s on %s', 'dental-care'),
+								esc_html__('By %s on %s', 'modern-dental-clinic'),
 								'<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>',
 								'<span class="posted-on"><time class="entry-date published" datetime="' . esc_attr(get_the_date('c')) . '">' . esc_html(get_the_date()) . '</time></span>'
 							);
@@ -37,7 +37,7 @@ if (have_posts()) {
 						
 						// Page pagination
 						wp_link_pages(array(
-							'before'      => '<div class="page-links">' . esc_html__('Pages:', 'dental-care'),
+							'before'      => '<div class="page-links">' . esc_html__('Pages:', 'modern-dental-clinic'),
 							'after'       => '</div>',
 							'link_before' => '<span>',
 							'link_after'  => '</span>',
@@ -50,7 +50,7 @@ if (have_posts()) {
 						// Tags
 						if (has_tag()) {
 							echo '<div class="tags-list">';
-							echo esc_html__('Tags: ', 'dental-care');
+							echo esc_html__('Tags: ', 'modern-dental-clinic');
 							the_tags('', ', ', '');
 							echo '</div>';
 						}
@@ -58,7 +58,7 @@ if (have_posts()) {
 						// Categories
 						if (has_category()) {
 							echo '<div class="categories-list">';
-							echo esc_html__('Categories: ', 'dental-care');
+							echo esc_html__('Categories: ', 'modern-dental-clinic');
 							the_category(', ');
 							echo '</div>';
 						}
@@ -69,8 +69,8 @@ if (have_posts()) {
 				<?php
 				// Post navigation
 				the_post_navigation(array(
-					'prev_text' => esc_html__('Previous: %title', 'dental-care'),
-					'next_text' => esc_html__('Next: %title', 'dental-care'),
+					'prev_text' => esc_html__('Previous: %title', 'modern-dental-clinic'),
+					'next_text' => esc_html__('Next: %title', 'modern-dental-clinic'),
 				));
 
 				// Comments
@@ -87,8 +87,8 @@ if (have_posts()) {
 	<main id="primary" class="mlt-main">
 		<div class="mlt-container">
 			<article class="no-posts">
-				<h1><?php esc_html_e('Post Not Found', 'dental-care'); ?></h1>
-				<p><?php esc_html_e('Sorry, we couldn\'t find the post you were looking for.', 'dental-care'); ?></p>
+				<h1><?php esc_html_e('Post Not Found', 'modern-dental-clinic'); ?></h1>
+				<p><?php esc_html_e('Sorry, we couldn\'t find the post you were looking for.', 'modern-dental-clinic'); ?></p>
 			</article>
 		</div>
 	</main>

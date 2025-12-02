@@ -32,7 +32,7 @@
                     }
                 }
                 if ($has_socials) : ?>
-                    <h4><?php _e('Follow Us', 'dental-care'); ?></h4>
+                    <h4><?php _e('Follow Us', 'modern-dental-clinic'); ?></h4>
                     <div class="mlt-social-links">
                         <?php foreach ($socials as $social) : 
                             $url = mlt_get_option('mlt_social_' . $social, '');
