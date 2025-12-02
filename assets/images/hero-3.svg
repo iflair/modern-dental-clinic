@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="700" viewBox="0 0 1920 700" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="g4" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dff4ff"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f7fcff"/>
+
+  <!-- Large tilted rectangle shapes -->
+  <g transform="rotate(-6 960 350)" opacity="0.95">
+    <rect x="-200" y="40" width="1400" height="520" rx="24" fill="#cdeeff"/>
+    <rect x="400" y="100" width="1400" height="520" rx="24" fill="#bfe9ff" opacity="0.9"/>
+  </g>
+
+  <!-- Soft spotlight -->
+  <ellipse cx="960" cy="280" rx="520" ry="200" fill="url(#g4)" opacity="0.6"/>
+</svg>
