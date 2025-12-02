@@ -1,4 +1,4 @@
-=== Dental Care ===
+=== Modern Dental Clinic ===
 Contributors: iflairwebtechnologies
 Tags: one-column, two-columns, custom-background, custom-logo, flexible-header, block-styles, responsive-layout, landing-page
 Requires at least: 5.0
@@ -12,7 +12,7 @@ A minimal, fast landing page WordPress theme with hero, features, testimonials, 
 
 == Description ==
 
-Dental Care is a lightweight, responsive WordPress theme designed for one-page sites such as dental clinics, small businesses, and landing pages. It includes sections for hero content, features, testimonials, pricing tables, and a contact form. The theme fully supports:
+Modern Dental Clinic is a lightweight, responsive WordPress theme designed for one-page sites such as dental clinics, small businesses, and landing pages. It includes sections for hero content, features, testimonials, pricing tables, and a contact form. The theme fully supports:
 
 * Custom logo
 * Featured images (post thumbnails)
